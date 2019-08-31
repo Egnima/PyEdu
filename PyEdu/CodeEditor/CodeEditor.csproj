@@ -36,58 +36,20 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DropDownButtonLib, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\DropDownButtonLib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ExplorerTestLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\ExplorerTestLib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FileListView, Version=3.1.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\FileListView.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FileSystemModels, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\FileSystemModels.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FilterControlsLib, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\FilterControlsLib.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FolderBrowser, Version=3.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\FolderBrowser.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="FolderControlsLib, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\FolderControlsLib.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Dirkster.DropDownButtonLib.1.0.4.1\lib\net4\DropDownButtonLib.dll</HintPath>
     </Reference>
     <Reference Include="HistoryControlLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\HistoryControlLib.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Dirkster.HistoryControlLib.1.0.0\lib\net4\HistoryControlLib.dll</HintPath>
     </Reference>
     <Reference Include="ICSharpCode.AvalonEdit, Version=5.0.3.0, Culture=neutral, PublicKeyToken=9cc39be672370310, processorArchitecture=MSIL">
       <HintPath>..\packages\AvalonEdit.5.0.4\lib\Net40\ICSharpCode.AvalonEdit.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="InplaceEditBoxLib, Version=1.3.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\InplaceEditBoxLib.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Dirkster.InplaceEditBoxLib.1.3.0\lib\net4\InplaceEditBoxLib.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\log4net.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -101,14 +63,10 @@
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
     <Reference Include="UserNotification, Version=1.4.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\UserNotification.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Dirkster.InplaceEditBoxLib.1.3.0\lib\net4\UserNotification.dll</HintPath>
     </Reference>
     <Reference Include="WatermarkControlsLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Lib\WatermarkControlsLib.dll</HintPath>
-      <Private>True</Private>
+      <HintPath>..\packages\Dirkster.WatermarkControlsLib.1.0.1\lib\net4\WatermarkControlsLib.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -198,6 +156,32 @@
     <Resource Include="Resources\Images\FileView\magnifying_glass.png" />
     <Content Include="Resources\Images\FileView\magnifying_glass.svg" />
     <Resource Include="Resources\Images\FileView\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components\FileListView\FileListView.csproj">
+      <Project>{735cf8ec-a4ef-49a2-bc72-ec360a0185a4}</Project>
+      <Name>FileListView</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\FileSystemModels\FileSystemModels.csproj">
+      <Project>{391639c4-5c43-4391-9465-27686e82c33f}</Project>
+      <Name>FileSystemModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\FilterControlsLib\FilterControlsLib.csproj">
+      <Project>{52f61815-3ec5-461b-bce0-ab80b1c5b229}</Project>
+      <Name>FilterControlsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\FolderBrowser\FolderBrowser.csproj">
+      <Project>{7d4bd5f8-a98e-4966-abbd-cbe202dfbef7}</Project>
+      <Name>FolderBrowser</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\FolderControlsLib\FolderControlsLib.csproj">
+      <Project>{511fa2d6-2022-4de1-9a3e-731e04e8f10c}</Project>
+      <Name>FolderControlsLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserControls\ExplorerControl\ExplorerControl.csproj">
+      <Project>{3360656a-455d-44df-aab4-8b3e9a707404}</Project>
+      <Name>ExplorerControl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

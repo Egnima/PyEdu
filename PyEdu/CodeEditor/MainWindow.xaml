@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
         xmlns:local="clr-namespace:CodeEditor"
-        xmlns:ExplorerTestLib="clr-namespace:ExplorerTestLib;assembly=ExplorerTestLib" x:Class="CodeEditor.MainWindow"
+        xmlns:ExplorerControl="clr-namespace:ExplorerControl;assembly=ExplorerControl" x:Class="CodeEditor.MainWindow"
         mc:Ignorable="d"
         Title="Code Editor" Height="450" Width="800">
     <Grid>
@@ -82,8 +82,8 @@
                     Background="Black"
                     ShowsPreview="True"
                     Width="5"/>
-                <Grid xmlns:localview="clr-namespace:ExplorerTestLib;assembly=ExplorerTestLib"/>
-                    <ExplorerTestLib:FileListItemView DataContext="{Binding FolderView}" Grid.Column="2"/>
+                <Grid xmlns:localview="clr-namespace:ExplorerControl;assembly=ExplorerControl"/>
+                    <ExplorerControl:FileListItemView DataContext="{Binding FolderView}" Grid.Column="2"/>
                 </Grid>
         </DockPanel>
     </Grid>
