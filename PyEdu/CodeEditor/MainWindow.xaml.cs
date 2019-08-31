@@ -65,7 +65,7 @@ namespace CodeEditor
         {
             OpenFileDialog openFileDialog = new OpenFileDialog { CheckFileExists = true,
                 DefaultExt = ".py",
-                Filter = "Python Script File|*.py|Plain Text|*.txt|All Files|*.*",
+                Filter = "파이썬 파일|*.py|일반 텍스트|*.txt|모든 파일|*.*",
                 FilterIndex = 0 };
             if (openFileDialog.ShowDialog() ?? false)
             {
@@ -80,7 +80,7 @@ namespace CodeEditor
             if (currentFileName == null)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog { DefaultExt = ".py",
-                    Filter = "Python Script File|*.py|Plain Text|*.txt|All Files|*.*",
+                    Filter = "파이썬 파일|*.py|일반 텍스트|*.txt|모든 파일|*.*",
                     FilterIndex = 0 };
                 if (saveFileDialog.ShowDialog() ?? false)
                 {
