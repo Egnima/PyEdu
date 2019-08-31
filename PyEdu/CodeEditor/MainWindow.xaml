@@ -1,0 +1,90 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avalonEdit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:local="clr-namespace:CodeEditor"
+        xmlns:ExplorerControl="clr-namespace:ExplorerControl;assembly=ExplorerControl" x:Class="CodeEditor.MainWindow"
+        mc:Ignorable="d"
+        Title="Code Editor" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <ToolBar DockPanel.Dock="Top">
+                <ToolBar.Resources>
+                    <Style TargetType="{x:Type Image}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsEnabled, RelativeSource={RelativeSource AncestorLevel=1, AncestorType={x:Type ButtonBase}}}" Value="False">
+                                <Setter Property="Opacity" Value="0.30" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ToolBar.Resources>
+                <Button Click="openFileClick">
+                    <Image Source="Resources/Images/Open.png" Height="16"/>
+                </Button>
+                <Button Click="saveFileClick">
+                    <Image Source="Resources/Images/Save.png" Height="16"/>
+                </Button>
+                <Separator/>
+                <Button Command="Cut">
+                    <Image Source="Resources/Images/Cut.png" Height="16"/>
+                </Button>
+                <Button Command="Copy">
+                    <Image Source="Resources/Images/Copy.png" Height="16"/>
+                </Button>
+                <Button Command="Paste">
+                    <Image Source="Resources/Images/Paste.png" Height="16"/>
+                </Button>
+                <Button Command="Delete">
+                    <Image Source="Resources/Images/Delete.png" Height="16"/>
+                </Button>
+                <Separator/>
+                <Button Command="Undo">
+                    <Image Source="Resources/Images/Undo.png" Height="16"/>
+                </Button>
+                <Button Command="Redo">
+                    <Image Source="Resources/Images/Redo.png" Height="16"/>
+                </Button>
+                <Separator/>
+                <CheckBox IsChecked="{Binding WordWrap, ElementName=codeEditor}">
+                    <Image Source="Resources/Images/WordWrap.png" Height="16"/>
+                </CheckBox>
+                <CheckBox IsChecked="{Binding ShowLineNumbers, ElementName=codeEditor}">
+                    <TextBlock Width="16" TextAlignment="Center"><Run Text="#"/></TextBlock>
+                </CheckBox>
+                <CheckBox IsChecked="{Binding Options.ShowEndOfLine, ElementName=codeEditor}">
+                    <TextBlock Width="16" TextAlignment="Center"><Run Text="¶"/></TextBlock>
+                </CheckBox>
+                <Separator/>
+                <Button Click="runClick" x:Name="btnRun">
+                    <Image Source="Resources/Images/Run.png" Height="16"/>
+                </Button>
+                <Button Click="stopClick" x:Name="btnStop" IsEnabled="False">
+                    <Image Source="Resources/Images/Stop.png" Height="16" ToolTip="Stop any running script"/>
+                </Button>
+            </ToolBar>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*" MinWidth="300"/>
+                </Grid.ColumnDefinitions>
+                <avalonEdit:TextEditor
+                    Grid.Column="0"
+                    x:Name="codeEditor"
+                    FontFamily="Consolas"
+                    FontSize="13pt"/>
+                <GridSplitter 
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Stretch"
+                    Background="Black"
+                    ShowsPreview="True"
+                    Width="5"/>
+                <Grid xmlns:localview="clr-namespace:ExplorerControl;assembly=ExplorerControl"/>
+                    <ExplorerControl:FileListItemView DataContext="{Binding FolderView}" Grid.Column="2"/>
+                </Grid>
+        </DockPanel>
+    </Grid>
+</Window>
